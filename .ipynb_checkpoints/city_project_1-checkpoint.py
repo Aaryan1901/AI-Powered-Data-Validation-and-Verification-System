@@ -5,7 +5,7 @@ import time
 from tqdm import tqdm
 
 # Define the LLM Foundry token for your API requests
-LLMFOUNDRY_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im11dGh1a3VtYXIucGFuY2hhYmVrYXNhbkBzdHJhaXZlLmNvbSJ9.uiwWDBAUFxkHaLY4duukUT0h94izwJH6rktK5mksef0"
+LLMFOUNDRY_TOKEN = "*************************************8"
 
 # Function to interact with the first model
 def chat_with_llm_model1(user_input):
@@ -40,14 +40,14 @@ def chat_with_llm_model2(user_input):
         return f"Error: {response.status_code} - {response.text}"
 
 # Load the Excel file and the specific sheet
-file_path = r'D:\python_test\test\city_name\city_name.xlsx'
+file_path = r'C:\Users\Aaryan\Documents\project-1_materials-20250512T132232Z-1-001\project-1_materials\city_name.xlsx'
 sheet_name = 'Cosmo Input Report'
 print("Loading Excel file.")
 df = pd.read_excel(file_path, sheet_name=sheet_name)
 
 # Load the prompt from the text file
 print("Loading prompt from text file.")
-with open(r'D:\python_test\test\city_name\prompt.txt', 'r') as file:
+with open(r'C:\Users\Aaryan\Documents\project-1_materials-20250512T132232Z-1-001\project-1_materials\prompt.txt', 'r') as file:
     prompt_template = file.read()
 
 # Check for result columns and add them if they don't exist
@@ -127,5 +127,5 @@ print(f"Rows where model comparison was not needed: {no_check_needed_count}")
 
 # Save the modified DataFrame back to Excel
 print("Saving the results to Excel.")
-df.to_excel(r'D:\python_test\test\city_name\processed_city_name.xlsx', sheet_name=sheet_name, index=False)
+df.to_excel(r'C:\Users\Aaryan\Documents\project-1_materials-20250512T132232Z-1-001\project-1_materials\processed_city_name.xlsx', sheet_name=sheet_name, index=False)
 print("Processing completed and file saved.")
